@@ -1,0 +1,777 @@
+<html lang="pt">
+<head>
+<style> 
+
+textarea.form-control {
+    border: 1px solid #ccc !important;
+    padding-left: 10px !important;
+}  
+.box_1{
+  box-shadow: 0px 6px 10px 0px #e3e7e9;
+}
+.box_2{
+  box-shadow: 0px 6px 10px 1px #e3e7e9;
+}  
+.btn.copybtn {
+    padding: 2px 14px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    float: right;
+}  
+.float-left {
+    float: left;
+}  
+.pr-0 {
+	padding-right: 0 !important;
+}
+.pl-0 {
+	padding-left: 0 !important;
+}
+
+@media only screen and (min-width:991px) and (max-width:1366px) {
+a.btn.btn-success.btn-1.quillbot-hide {
+	margin-top: 6px;
+}
+.col-6 {
+	-ms-flex: 0 0 43% !important;
+	flex: 0 0 43% !important;
+	max-width: 43% !important;
+}
+.mt-5, .my-5 {
+	margin-top: 3rem !important;
+}
+.card-footer .btn {
+	font-size: 13px !important;
+	padding: 7px 10px !important;
+}
+}
+
+@media only screen and (min-width:320px) and (max-width:990px) {
+.box_2_outer {
+    margin-left: 10px;
+}    
+a.btn.btn-success.btn-1.quillbot-hide {
+	margin-top: 6px;
+}
+.mt-5, .my-5 {
+	margin-top: 3rem !important;
+}
+.card-footer .btn {
+	font-size: 13px !important;
+	padding: 7px 10px !important;
+}
+.col-md-6 {
+	max-width: 100% !important;
+	flex: 0 0 93% !important;
+}
+.col-6 {
+	-ms-flex: 0 0 40% !important;
+	flex: 0 0 40% !important;
+	max-width: 40% !important;
+}
+}
+.col-md-12 {
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+	position: relative;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.mb-2, .my-2 {
+	margin-bottom: 0.5rem !important;
+}
+.text-right {
+	text-align: right !important;
+}
+.card-footer p {
+	font-family: 'Open Sans', sans-serif !important;
+}
+a.btn-success.btn.btn-1.quillbot-hide {
+	text-decoration: none !important;
+	background-color: #499557 !important;
+	font-weight: 700 !important;
+	padding: 7px 25px !important;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+	border-radius: 25px !important;
+}
+textarea:focus {
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+ textarea:focus-visible {
+ outline-offset: 0px;
+ box-shadow: none !important;
+ outline: 0 !important;
+}
+.btn:focus {
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+ .btn:focus-visible {
+ outline-offset: 0px;
+ box-shadow: none !important;
+ outline: 0 !important;
+}
+input:focus {
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+ input:focus-visible {
+ outline-offset: 0px;
+ box-shadow: none !important;
+ outline: 0 !important;
+}
+.btn-1 {
+	color: #fff !important;
+	background-color: #499557 !important;
+	font-weight: 700 !important;
+	font-size: 1rem !important;
+	padding: 7px 25px !important;
+	border-radius: 25px !important;
+}
+.btn-1:focus {
+	color: #fff;
+	background-color: #499557;
+	font-weight: 700;
+	padding: 7px 25px;
+	border-radius: 25px !important;
+}
+.btn-success {
+	color: #fff;
+	background-color: #28a745;
+	border-color: #28a745;
+}
+.error {
+	color: red;
+}
+.form-control:disabled, .form-control[readonly] {
+	background-color: #e9ecef;
+	opacity: 1;
+}
+.form-group {
+	position: relative;
+	margin-bottom: 1.25rem;
+}
+.col-6 {
+	-ms-flex: 0 0 44%;
+	flex: 0 0 44%;
+	max-width: 44%;
+}
+.text-muted {
+	color: #6c757d !important;
+}
+.pb-2, .py-2 {
+	padding-bottom: 0.5rem !important;
+}
+.pt-2, .py-2 {
+	padding-top: 0.5rem !important;
+}
+.card-footer {
+	padding: 0.75rem 1.25rem;
+	background-color: rgba(0, 0, 0, 0.03);
+	border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card-footer:last-child {
+	border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+}
+.custom-area {
+	border: none !important;
+	padding: 0px !important;
+}
+textarea.form-control {
+	height: auto;
+}
+.card-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1.25rem;
+}
+.card-header h4 i {
+	color: #1c7430 !important;
+	font-size: 16px !important;
+}
+.card-header h4 {
+	padding: 0px;
+	margin: 0px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+}
+.card-header:first-child {
+	border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+.card-header {
+	padding: 0.75rem 1.25rem;
+	margin-bottom: 0;
+	background-color: #ECEFF0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.w-100 {
+	width: 100% !important;
+}
+.card {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 0.25rem;
+}
+mt-5, .my-5 {
+	margin-top: 3rem !important;
+}
+.d-flex {
+	display: -ms-flexbox !important;
+	display: flex !important;
+}
+.col-md-6 {
+	-ms-flex: 0 0 47%;
+	flex: 0 0 47%;
+	max-width: 47%;
+}
+.row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+/***** END Quilbolt ******/
+      
+      /*@media only screen and (min-width:320px) and (max-width:640px){*/
+textarea#content {
+	width: 100% !important;
+}
+/*}*/
+.badafont {
+	font-size: 20px;
+}
+#captchaerror {
+	color: red;
+}
+p h2 {
+	text-align: center;
+	color: red;
+}
+p.under_process {
+	text-align: center;
+	color: red;
+}
+.form-group {
+	text-align: center;
+}
+.form-control {
+	display: block;
+	width: 100%;
+	height: calc(1.5em + 0.75rem + 2px);
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	margin: 0 auto;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+div#b-navbar {
+	display: none;
+}
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+.btn:hover, .btn:focus {
+	color: #333;
+	text-decoration: none;
+}
+.btn:active, .btn.active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+	pointer-events: none;
+	cursor: not-allowed;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	opacity: .65;
+}
+.btn-default {
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+	color: #333;
+	background-color: #ebebeb;
+	border-color: #adadad;
+}
+.btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+	background-image: none;
+}
+.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active {
+	background-color: #fff;
+	border-color: #ccc;
+}
+.btn-default .badge {
+	color: #fff;
+	background-color: #333;
+}
+.btn-primary {
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+	color: #fff;
+	background-color: #3276b1;
+	border-color: #285e8e;
+}
+.btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+	background-image: none;
+}
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+.btn-primary .badge {
+	color: #428bca;
+	background-color: #fff;
+}
+.btn-success {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+	color: #fff;
+	background-color: #47a447;
+	border-color: #398439;
+}
+.btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+	background-image: none;
+}
+.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.btn-success .badge {
+	color: #5cb85c;
+	background-color: #fff;
+}
+.btn-info {
+	color: #fff;
+	background-color: #5bc0de;
+	border-color: #46b8da;
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+	color: #fff;
+	background-color: #39b3d7;
+	border-color: #269abc;
+}
+.btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+	background-image: none;
+}
+.btn-info.disabled, .btn-info[disabled], fieldset[disabled] .btn-info, .btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover, .btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus, .btn-info.disabled:active, .btn-info[disabled]:active, fieldset[disabled] .btn-info:active, .btn-info.disabled.active, .btn-info[disabled].active, fieldset[disabled] .btn-info.active {
+	background-color: #5bc0de;
+	border-color: #46b8da;
+}
+.btn-info .badge {
+	color: #5bc0de;
+	background-color: #fff;
+}
+.btn-warning {
+	color: #fff;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
+	color: #fff;
+	background-color: #ed9c28;
+	border-color: #d58512;
+}
+.btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
+	background-image: none;
+}
+.btn-warning.disabled, .btn-warning[disabled], fieldset[disabled] .btn-warning, .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover, .btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active, .btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active, .btn-warning.disabled.active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning.active {
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+.btn-warning .badge {
+	color: #f0ad4e;
+	background-color: #fff;
+}
+.btn-danger {
+	color: #fff;
+	background-color: #d9534f;
+	border-color: #d43f3a;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+	color: #fff;
+	background-color: #d2322d;
+	border-color: #ac2925;
+}
+.btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+	background-image: none;
+}
+.btn-danger.disabled, .btn-danger[disabled], fieldset[disabled] .btn-danger, .btn-danger.disabled:hover, .btn-danger[disabled]:hover, fieldset[disabled] .btn-danger:hover, .btn-danger.disabled:focus, .btn-danger[disabled]:focus, fieldset[disabled] .btn-danger:focus, .btn-danger.disabled:active, .btn-danger[disabled]:active, fieldset[disabled] .btn-danger:active, .btn-danger.disabled.active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger.active {
+	background-color: #d9534f;
+	border-color: #d43f3a;
+}
+.btn-danger .badge {
+	color: #d9534f;
+	background-color: #fff;
+}
+.btn-link {
+	font-weight: normal;
+	color: #428bca;
+	cursor: pointer;
+	border-radius: 0;
+}
+.btn-link, .btn-link:active, .btn-link[disabled], fieldset[disabled] .btn-link {
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+	border-color: transparent;
+}
+.btn-link:hover, .btn-link:focus {
+	color: #2a6496;
+	text-decoration: underline;
+	background-color: transparent;
+}
+.btn-link[disabled]:hover, fieldset[disabled] .btn-link:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:focus {
+	color: #999;
+	text-decoration: none;
+}
+.btn-lg, .btn-group-lg > .btn {
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.33;
+	border-radius: 6px;
+}
+.btn-sm, .btn-group-sm > .btn {
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+}
+.btn-xs, .btn-group-xs > .btn {
+	padding: 1px 5px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+}
+.btn-block {
+	display: block;
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+}
+.btn-block + .btn-block {
+	margin-top: 5px;
+}
+.btn-outline {
+	color: inherit;
+	background-color: transparent;
+	transition: all .5s;
+}
+.btn-primary.btn-outline {
+	color: #428bca;
+}
+.btn-success.btn-outline {
+	color: #5cb85c;
+}
+.btn-info.btn-outline {
+	color: #5bc0de;
+}
+.btn-warning.btn-outline {
+	color: #f0ad4e;
+}
+.btn-danger.btn-outline {
+	color: #d9534f;
+}
+.btn-primary.btn-outline:hover, .btn-success.btn-outline:hover, .btn-info.btn-outline:hover, .btn-warning.btn-outline:hover, .btn-danger.btn-outline:hover {
+	color: #fff;
+}
+#overlay {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background: rgba(0,0,0,0.6);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner {
+	width: 60px;
+	height: 60px;
+	border: 7px #ddd solid;
+	border-top: 7px #499557 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+.spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3rem;
+	height: 3rem;
+	margin: -0.625rem 0 0 -1.875rem;
+	text-align: center;
+}
+ @keyframes sp-anime {
+ 100% {
+ transform: rotate(360deg);
+}
+}
+#copied_label {
+	color: red;
+      margin: unset;
+}
+</style>
+
+</head>
+
+<body onload="GenerateCaptcha();">
+<div id="overlay">
+  <div class="cv-spinner"> <span class="spinner"></span> </div>
+</div>
+<section>
+  <div class="container">
+    <div class="row custom_row">
+      <div class="col-md-6 d-flex  mt-5 pr-0">
+        <div class="card w-100 box_1">
+          <div class="card-header">
+            <h4> Entrada: <i class="fa fa-external-link"></i> </h4>
+          </div>
+          <div class="card-body">
+          <form method="post">
+            <textarea class="form-control custom-area" name="text" rows="10" placeholder="Limite maximo de 7000 caracteres..." maxlength="7000" id="txtbefore"></textarea>
+            </div>
+            <div class="card-footer py-2 text-muted">
+            <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <center>
+                  <b><span id="iamcaptcha" class="badafont"></span></b>
+                </center>
+                <input type="text" class="form-control" id="txtCompare" placeholder="digite o numero aqui.." />
+                <input type="hidden" class="form-control" readonly id="txtCaptcha"/>
+                <center>
+                  <span id="captchaerror" class="error"></span>
+                </center>
+              </div>
+              <div class="form-group">
+                <center>
+                  <input type="button" class="btn btn-success btn-1" id="btnrefresh" value="Alterar numero" onclick="GenerateCaptcha()" />
+                </center>
+              </div>
+            </div>
+            <div class="col-6 text-right"> <br>
+              <br>
+              <br>
+              <br>
+              <input class="btn btn-success btn-1" type="button" id="submit" name="submit" value="Reescrever">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 d-flex  mt-5 pl-0 box_2_outer">
+    <div class="card w-100 box_2">
+      <div class="card-header">
+        <h4 class="float-left"> Resultado: </h4>
+        <button class="btn btn-success btn-1 copybtn" onclick="myFunction()">Copiar Texto</button>
+      </div>
+      <div class="card-body">
+        <textarea id="myInput" class="form-control custom-area" name="text" rows="15" placeholder="Seu conteudo de resultado esta aqui"></textarea>
+      </div>
+      <center>
+        <p id="copied_label"></p> 
+      </center>
+      <br>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+<div class="download" id="download"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script> 
+      
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      if( copyText.value ) {
+      	$("#copied_label").html("Seu texto foi copiado com sucesso.");
+      }
+      //alert("Copied the text: " + copyText.value);
+    }
+      
+    $("#submit").click(function(){
+        document.getElementById('captchaerror').innerHTML = '';
+        if(ValidCaptcha() == true)
+        {
+          var txt = $("#txtbefore").val();
+          var a = doGet(txt,'pt','zu');
+          $("#overlay").fadeIn(300);
+        }　else{
+          GenerateCaptcha();
+        }
+      });
+       
+  function doGet(srctxt, srclang, trgtlang) {
+        var sourceText = '';
+    
+        sourceText = srctxt;
+    
+        var sourceLang = srclang;
+    
+        var targetLang = trgtlang;
+    
+        /* Option 1 */
+        var translatedText = '';
+    
+        // var translatedText = LanguageApp.translate(sourceText, sourceLang, targetLang)
+    
+        /* Option 2 */
+    
+        var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURIComponent(sourceText);
+        // var result = JSON.parse(UrlFetchApp.fetch(url).getContentText());
+        const xhr = new XMLHttpRequest();
+    
+        // Open an obejct (GET/POST, PATH,
+        // ASYN-TRUE/FALSE)
+        xhr.open("GET", url, true);
+    
+        // When response is ready
+        xhr.onload = function () {
+          if (this.status === 200) {
+            // Changing string data into JSON Object
+            obj = JSON.parse(this.responseText);
+            var newarr = obj[0];
+            var keys = $.map( newarr, function( value, key ) {
+              return newarr[key][0];
+            });
+            translatedText = keys.join('');
+            var sourceLang1 = 'zu';
+            var targetLang1 = 'pt';
+            var url2 = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang1 + "&tl=" + targetLang1 + "&dt=t&q=" + encodeURIComponent(translatedText);
+                    const xhr1 = new XMLHttpRequest();
+                    xhr1.open("GET", url2, true);
+                    xhr1.onload = function () {
+                      if (this.status === 200) {
+                        // Changing string data into JSON Object
+                        obj = JSON.parse(this.responseText);
+                        var newarr = obj[0];
+                        var keys = $.map( newarr, function( value, key ) {
+                          return newarr[key][0];
+                        });
+                        translatedText = keys.join('');
+                        setTimeout(function(){ $("#overlay").fadeOut(300); $("#myInput").val(translatedText); GenerateCaptcha(); },3000);
+                        
+                      } else {
+                        console.log("File not found hindi to english");
+                      }
+                    }
+                    // At last send the request
+                    xhr1.send();
+          } else {
+            console.log("File not found english to hindi");
+          }
+        }
+    
+        // At last send the request
+        xhr.send();
+    
+      }
+      
+        /* Function to Generat Captcha */  
+        function GenerateCaptcha() {  
+            var chr1 = Math.ceil(Math.random() * 10) + '';  
+            var chr2 = Math.ceil(Math.random() * 10) + '';  
+            var chr3 = Math.ceil(Math.random() * 10) + '';
+            var chr4 = Math.ceil(Math.random() * 10) + ''; 
+
+      //      var str = new Array(4).join().replace(/(.|$)/g, function () { return ((Math.random() * 36) | 0).toString(36)[Math.random() < .5 ? "toString" : "toUpperCase"](); });  
+
+            var captchaCode = chr1 + chr2 + chr3 + chr4;  
+            document.getElementById("txtCaptcha").value = captchaCode;
+            document.getElementById("iamcaptcha").innerHTML = captchaCode;
+            document.getElementById('txtCompare').value = '';
+       
+        }  
+
+        /* Validating Captcha Function */  
+        function ValidCaptcha() {  
+            var str1 = removeSpaces(document.getElementById('txtCaptcha').value);  
+            var str2 = removeSpaces(document.getElementById('txtCompare').value);  
+
+            document.getElementById('txtCompare').value = '';
+            if (str1 == str2) return true;  
+            document.getElementById('captchaerror').innerHTML = 'CAPTCHA errado !';
+            return false;  
+        } 
+
+        /* Remove spaces from Captcha Code */  
+        function removeSpaces(string) {  
+            return string.split(' ').join(' ');  
+        }  
+    // Disable Selection In Captcha Textbox
+        document.getElementById("iamcaptcha").addEventListener("mousedown", function(event){
+          event.preventDefault();
+        });
+    </script>
+</body>
+</html>
